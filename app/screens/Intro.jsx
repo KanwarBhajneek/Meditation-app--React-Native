@@ -19,7 +19,7 @@ export default function Intro() {
         <View style={styles.btnContainer}>
           <PrimaryButton
             text="SIGN UP"
-            onPress={() => navigation.navigate('Login')}
+            onPress={() => navigation.navigate('Signup')}
           />
         </View>
         <Text style={styles.btnSubText}>

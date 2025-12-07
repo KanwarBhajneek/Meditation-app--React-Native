@@ -3,6 +3,7 @@ import { useFonts } from 'expo-font';
 import 'react-native-reanimated';
 import Intro from './screens/Intro';
 import Login from './screens/Login';
+import Signup from './screens/Signup';
 
 const Stack = createStackNavigator();
 
@@ -21,6 +22,7 @@ export default function RootLayout() {
     <Stack.Navigator initialRouteName="Intro" screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Intro" component={Intro} />
       <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="Signup" component={Signup} />
     </Stack.Navigator>
   );
 }
