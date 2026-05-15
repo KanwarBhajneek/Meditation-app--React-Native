@@ -1,6 +1,7 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import { useFonts } from 'expo-font';
 import 'react-native-reanimated';
+import ChooseTopic from './screens/ChooseTopic';
 import Intro from './screens/Intro';
 import Login from './screens/Login';
 import Signup from './screens/Signup';
@@ -23,6 +24,7 @@ export default function RootLayout() {
       <Stack.Screen name="Intro" component={Intro} />
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Signup" component={Signup} />
+      <Stack.Screen name="ChooseTopic" component={ChooseTopic} />
     </Stack.Navigator>
   );
 }

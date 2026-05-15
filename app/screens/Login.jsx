@@ -36,7 +36,7 @@ const Login = () => {
         <View style={styles.btnContainer}>
           <PrimaryButton
             text="LOG IN"
-            onPress={() => navigation.navigate('Login')}
+            onPress={() => navigation.navigate('ChooseTopic')}
           />
         </View>
       </View>
