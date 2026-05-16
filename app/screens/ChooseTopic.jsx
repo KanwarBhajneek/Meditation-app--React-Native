@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -66,8 +67,11 @@ const topicsRight = [
 ];
 
 const TopicCard = React.memo(({ title, image, bgColor, height, titleColor }) => {
+    const navigation = useNavigation();
     return (
-        <TouchableOpacity style={[styles.cardContainer, { backgroundColor: bgColor, height }]}>
+        <TouchableOpacity
+            style={[styles.cardContainer, { backgroundColor: bgColor, height }]}
+            onPress={() => { navigation.navigate('Dashboard') }}>
             <View style={styles.imageContainer}>
                 <Image source={image} style={styles.cardImage} resizeMode="contain" />
             </View>
