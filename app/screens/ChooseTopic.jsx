@@ -71,7 +71,7 @@ const TopicCard = React.memo(({ title, image, bgColor, height, titleColor }) => 
     return (
         <TouchableOpacity
             style={[styles.cardContainer, { backgroundColor: bgColor, height }]}
-            onPress={() => { navigation.navigate('Dashboard') }}>
+            onPress={() => { navigation.navigate('Reminders') }}>
             <View style={styles.imageContainer}>
                 <Image source={image} style={styles.cardImage} resizeMode="contain" />
             </View>

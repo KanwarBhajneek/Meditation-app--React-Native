@@ -5,6 +5,7 @@ import ChooseTopic from './screens/ChooseTopic';
 import Dashboard from './screens/Dashboard';
 import Intro from './screens/Intro';
 import Login from './screens/Login';
+import Reminders from './screens/Reminders';
 import Signup from './screens/Signup';
 
 const Stack = createStackNavigator();
@@ -26,6 +27,7 @@ export default function RootLayout() {
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Signup" component={Signup} />
       <Stack.Screen name="ChooseTopic" component={ChooseTopic} />
+      <Stack.Screen name="Reminders" component={Reminders} />
       <Stack.Screen name="Dashboard" component={Dashboard} />
     </Stack.Navigator>
   );
