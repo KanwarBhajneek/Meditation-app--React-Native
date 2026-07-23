@@ -1,12 +1,15 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 
+import { useTranslation } from 'react-i18next';
+
 const Logo = () => {
+    const { t } = useTranslation();
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>Silent</Text>
+            <Text style={styles.text}>{t('components.logo.silent')}</Text>
             <Image source={require('../../assets/pngs/logo.png')} style={styles.img} />
-            <Text style={styles.text}>Moon</Text>
+            <Text style={styles.text}>{t('components.logo.moon')}</Text>
         </View>
     )
 }

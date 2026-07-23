@@ -1,0 +1,91 @@
+{
+  "components": {
+    "inputs": {
+      "email": "Email address",
+      "password": "Password",
+      "name": "Full name"
+    },
+    "timePicker": {
+      "am": "AM",
+      "pm": "PM"
+    },
+    "button": {
+      "facebook": "CONTINUE WITH FACEBOOK",
+      "google": "CONTINUE WITH GOOGLE"
+    },
+    "logo": {
+      "silent": "Silent",
+      "moon": "Moon"
+    }
+  },
+  "sections": {
+    "recommended": {
+      "header": "Recommended for you",
+      "focus": "Focus",
+      "happiness": "Happiness",
+      "meditation": "MEDITATION",
+      "duration": "3-10 MIN"
+    }
+  },
+  "screens": {
+    "intro": {
+      "title": "We are what we do",
+      "subtitle": "Thousands of people are using silent moon for regular meditation",
+      "signup": "SIGN UP",
+      "alreadyHaveAccount": "ALREADY HAVE AN ACCOUNT? ",
+      "login": "LOG IN"
+    },
+    "login": {
+      "welcome": "Welcome Back!",
+      "orLoginWithEmail": "OR LOG IN WITH EMAIL",
+      "loginBtn": "LOG IN"
+    },
+    "signup": {
+      "header": "Create your account",
+      "orSignupWithEmail": "OR SIGNUP WITH EMAIL",
+      "privacyPrefix": "I have read the ",
+      "privacyPolicy": "Privacy Policy",
+      "getStarted": "GET STARTED"
+    },
+    "home": {
+      "goodMorning": "Good morning,",
+      "wishGoodDay": "We wish you have a good day",
+      "basics": "Basics",
+      "course": "COURSE",
+      "relaxation": "Relaxation",
+      "music": "MUSIC",
+      "dailyThought": "Daily Thought",
+      "meditation": "MEDITATION",
+      "duration": "3-10 MIN",
+      "start": "START"
+    },
+    "chooseTopic": {
+      "headerBold": "What Brings you",
+      "headerLight": "to Silent Moon?",
+      "headerSubtitle": "choose a topic to focus on:",
+      "reduceStress": "Reduce Stress",
+      "increaseHappiness": "Increase Happiness",
+      "personalGrowth": "Personal Growth",
+      "improvePerformance": "Improve Performance",
+      "reduceAnxiety": "Reduce Anxiety",
+      "betterSleep": "Better Sleep"
+    },
+    "reminders": {
+      "timeQuestion": "What time would you like to meditate?",
+      "timeSubtitle": "Any time you can choose but We recommend first thing in th morning.",
+      "dayQuestion": "Which day would you like to meditate?",
+      "daySubtitle": "Everyday is best, but we recommend picking\nat least five.",
+      "save": "SAVE",
+      "noThanks": "NO THANKS",
+      "days": {
+        "SU": "SU",
+        "M": "M",
+        "T": "T",
+        "W": "W",
+        "TH": "TH",
+        "F": "F",
+        "S": "S"
+      }
+    }
+  }
+}

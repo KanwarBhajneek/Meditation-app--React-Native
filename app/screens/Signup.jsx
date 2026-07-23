@@ -5,11 +5,13 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Back from '../../assets/svgs/back.svg';
 import { PrimaryButton, SocialButton } from './../components/Button';
 import { Inputs } from './../components/Inputs';
+import { useTranslation } from 'react-i18next';
 
 const Signup = () => {
     const navigation = useNavigation()
     const insets = useSafeAreaInsets();
     const [accepted, setAccepted] = useState(false);
+    const { t } = useTranslation();
 
     return (
         <View style={styles.parent}>
@@ -22,7 +24,7 @@ const Signup = () => {
                 <Pressable onPress={() => navigation.goBack()} style={styles.back}>
                     <Back />
                 </Pressable>
-                <Text style={styles.header}>Create your account</Text>
+                <Text style={styles.header}>{t('screens.signup.header')}</Text>
 
                 <View style={styles.socialSpacing}>
                     <SocialButton.fb />
@@ -31,7 +33,7 @@ const Signup = () => {
                     <SocialButton.google />
                 </View>
 
-                <Text style={styles.loginText}>OR SIGNUP WITH EMAIL</Text>
+                <Text style={styles.loginText}>{t('screens.signup.orSignupWithEmail')}</Text>
 
                 <Inputs.name />
                 <View style={styles.inputSpacing}>
@@ -46,12 +48,12 @@ const Signup = () => {
                         {accepted ? <View style={styles.checked} /> : null}
                     </Pressable>
                     <Text style={styles.privacyText}>
-                        I have read the <Text style={styles.privacyLink}>Privacy Policy</Text>
+                        {t('screens.signup.privacyPrefix')}<Text style={styles.privacyLink}>{t('screens.signup.privacyPolicy')}</Text>
                     </Text>
                 </View>
 
                 <View style={styles.btnContainer}>
-                    <PrimaryButton text="GET STARTED" onPress={() => { }} />
+                    <PrimaryButton text={t('screens.signup.getStarted')} onPress={() => { }} />
                 </View>
 
             </View>

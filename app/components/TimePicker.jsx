@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { StyleSheet, View } from 'react-native';
 import WheelColumn, { ITEM_HEIGHT, PICKER_HEIGHT } from './WheelColumn';
+import { useTranslation } from 'react-i18next';
 
 const HOURS = Array.from({ length: 12 }, (_, i) => String(i + 1));
 const MINUTES = Array.from({ length: 60 }, (_, i) => String(i).padStart(2, '0'));
-const PERIODS = ['AM', 'PM'];
 
 export default function TimePicker({ hourIndex, minuteIndex, periodIndex, onHourChange, onMinuteChange, onPeriodChange }) {
+    const { t } = useTranslation();
+    const periods = useMemo(() => [t('components.timePicker.am'), t('components.timePicker.pm')], [t]);
+
     return (
         <View style={styles.timePickerContainer}>
             <View style={styles.timePickerGradientTop} />
@@ -31,7 +34,7 @@ export default function TimePicker({ hourIndex, minuteIndex, periodIndex, onHour
                     width={80}
                 />
                 <WheelColumn
-                    items={PERIODS}
+                    items={periods}
                     selectedIndex={periodIndex}
                     onSelect={onPeriodChange}
                     width={80}

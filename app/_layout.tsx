@@ -1,6 +1,7 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import { useFonts } from 'expo-font';
 import 'react-native-reanimated';
+import './i18n';
 import ChooseTopic from './screens/ChooseTopic';
 import Dashboard from './screens/Dashboard';
 import Intro from './screens/Intro';

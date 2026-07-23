@@ -5,10 +5,12 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Back from '../../assets/svgs/back.svg';
 import { PrimaryButton, SocialButton } from './../components/Button';
 import { Inputs } from './../components/Inputs';
+import { useTranslation } from 'react-i18next';
 
 const Login = () => {
   const insets = useSafeAreaInsets();
   const navigation = useNavigation();
+  const { t } = useTranslation();
   return (
     <View style={styles.parent}>
       <Image
@@ -22,20 +24,20 @@ const Login = () => {
           <Back />
         </Pressable>
 
-        <Text style={styles.header}>Welcome Back!</Text>
+        <Text style={styles.header}>{t('screens.login.welcome')}</Text>
 
         <SocialButton.fb />
         <View style={styles.googleContainer}>
           <SocialButton.google />
         </View>
-        <Text style={styles.loginText}>OR LOG IN WITH EMAIL</Text>
+        <Text style={styles.loginText}>{t('screens.login.orLoginWithEmail')}</Text>
         <Inputs.email />
         <View style={styles.passContainer}>
           <Inputs.password />
         </View>
         <View style={styles.btnContainer}>
           <PrimaryButton
-            text="LOG IN"
+            text={t('screens.login.loginBtn')}
             onPress={() => navigation.navigate('ChooseTopic')}
           />
         </View>

@@ -15,10 +15,21 @@ const Input = (props) => {
     )
 }
 
+import { useTranslation } from "react-i18next";
+
 export const Inputs = {
-    email: React.memo(() => <Input placeholder="Email address" />),
-    password: React.memo(() => <Input placeholder="Password" secureTextEntry={true} />),
-    name: React.memo(() => <Input placeholder="Full name" />)
+    email: React.memo(() => {
+        const { t } = useTranslation();
+        return <Input placeholder={t('components.inputs.email')} />;
+    }),
+    password: React.memo(() => {
+        const { t } = useTranslation();
+        return <Input placeholder={t('components.inputs.password')} secureTextEntry={true} />;
+    }),
+    name: React.memo(() => {
+        const { t } = useTranslation();
+        return <Input placeholder={t('components.inputs.name')} />;
+    })
 }
 
 const styles = StyleSheet.create({

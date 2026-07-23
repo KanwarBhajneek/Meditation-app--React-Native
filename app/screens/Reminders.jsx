@@ -10,27 +10,29 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { PrimaryButton } from '../components/Button';
 import TimePicker from '../components/TimePicker';
+import { useTranslation } from 'react-i18next';
 
 const DAYS = [
-    { key: 'SU', label: 'SU' },
-    { key: 'M', label: 'M' },
-    { key: 'T', label: 'T' },
-    { key: 'W', label: 'W' },
-    { key: 'TH', label: 'TH' },
-    { key: 'F', label: 'F' },
-    { key: 'S', label: 'S' },
+    { key: 'SU', labelKey: 'screens.reminders.days.SU' },
+    { key: 'M', labelKey: 'screens.reminders.days.M' },
+    { key: 'T', labelKey: 'screens.reminders.days.T' },
+    { key: 'W', labelKey: 'screens.reminders.days.W' },
+    { key: 'TH', labelKey: 'screens.reminders.days.TH' },
+    { key: 'F', labelKey: 'screens.reminders.days.F' },
+    { key: 'S', labelKey: 'screens.reminders.days.S' },
 ];
 
 const DEFAULT_SELECTED_DAYS = new Set(['SU', 'M', 'T', 'W', 'S']);
 
-function DayButton({ label, selected, onPress }) {
+function DayButton({ labelKey, selected, onPress }) {
+    const { t } = useTranslation();
     return (
         <Pressable
             onPress={onPress}
             style={[styles.dayButton, selected ? styles.dayButtonSelected : styles.dayButtonUnselected]}
         >
             <Text style={[styles.dayButtonText, selected ? styles.dayButtonTextSelected : styles.dayButtonTextUnselected]}>
-                {label}
+                {t(labelKey)}
             </Text>
         </Pressable>
     );
@@ -38,6 +40,7 @@ function DayButton({ label, selected, onPress }) {
 
 export default function Reminders() {
     const navigation = useNavigation();
+    const { t } = useTranslation();
     const [hourIndex, setHourIndex] = useState(10);
     const [minuteIndex, setMinuteIndex] = useState(30);
     const [periodIndex, setPeriodIndex] = useState(0);
@@ -60,9 +63,9 @@ export default function Reminders() {
     return (
         <SafeAreaView style={styles.container}>
             <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
-                <Text style={styles.title}>What time would you like to meditate?</Text>
+                <Text style={styles.title}>{t('screens.reminders.timeQuestion')}</Text>
                 <Text style={styles.subtitle}>
-                    Any time you can choose but We recommend first thing in th morning.
+                    {t('screens.reminders.timeSubtitle')}
                 </Text>
 
                 <TimePicker
@@ -74,16 +77,16 @@ export default function Reminders() {
                     onPeriodChange={setPeriodIndex}
                 />
 
-                <Text style={[styles.title, styles.dayTitle]}>Which day would you like to meditate?</Text>
+                <Text style={[styles.title, styles.dayTitle]}>{t('screens.reminders.dayQuestion')}</Text>
                 <Text style={styles.subtitle}>
-                    Everyday is best, but we recommend picking{'\n'}at least five.
+                    {t('screens.reminders.daySubtitle')}
                 </Text>
 
                 <View style={styles.daysRow}>
                     {DAYS.map((day) => (
                         <DayButton
                             key={day.key}
-                            label={day.label}
+                            labelKey={day.labelKey}
                             selected={selectedDays.has(day.key)}
                             onPress={() => toggleDay(day.key)}
                         />
@@ -91,9 +94,9 @@ export default function Reminders() {
                 </View>
 
                 <View style={styles.actions}>
-                    <PrimaryButton text="SAVE" onPress={goToDashboard} />
+                    <PrimaryButton text={t('screens.reminders.save')} onPress={goToDashboard} />
                     <Pressable onPress={goToDashboard} style={styles.noThanksButton}>
-                        <Text style={styles.noThanksText}>NO THANKS</Text>
+                        <Text style={styles.noThanksText}>{t('screens.reminders.noThanks')}</Text>
                     </Pressable>
                 </View>
             </ScrollView>

@@ -2,12 +2,13 @@ import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useTranslation } from 'react-i18next';
 
 
 const topicsLeft = [
     {
         id: '1',
-        title: 'Reduce Stress',
+        titleKey: 'screens.chooseTopic.reduceStress',
         image: require('../../assets/pngs/reducestress.png'),
         bgColor: '#8C96FF',
         height: 210,
@@ -15,7 +16,7 @@ const topicsLeft = [
     },
     {
         id: '3',
-        title: 'Increase Happiness',
+        titleKey: 'screens.chooseTopic.increaseHappiness',
         image: require('../../assets/pngs/happiness.png'),
         bgColor: '#FFB9A1',
         height: 160,
@@ -23,7 +24,7 @@ const topicsLeft = [
     },
     {
         id: '5',
-        title: 'Personal Growth',
+        titleKey: 'screens.chooseTopic.personalGrowth',
         image: require('../../assets/pngs/growth.png'),
         bgColor: '#78BA99',
         height: 210,
@@ -34,7 +35,7 @@ const topicsLeft = [
 const topicsRight = [
     {
         id: '2',
-        title: 'Improve Performance',
+        titleKey: 'screens.chooseTopic.improvePerformance',
         image: require('../../assets/pngs/improveperformance.png'),
         bgColor: '#FF8573',
         height: 160,
@@ -42,7 +43,7 @@ const topicsRight = [
     },
     {
         id: '4',
-        title: 'Reduce Anxiety',
+        titleKey: 'screens.chooseTopic.reduceAnxiety',
         image: require('../../assets/pngs/anxiety.png'),
         bgColor: '#FFC984',
         height: 210,
@@ -50,7 +51,7 @@ const topicsRight = [
     },
     {
         id: '6',
-        title: 'Better Sleep',
+        titleKey: 'screens.chooseTopic.betterSleep',
         image: require('../../assets/pngs/sleep.png'),
         bgColor: '#3C4253',
         height: 160,
@@ -66,8 +67,9 @@ const topicsRight = [
     }
 ];
 
-const TopicCard = React.memo(({ title, image, bgColor, height, titleColor }) => {
+const TopicCard = React.memo(({ title, titleKey, image, bgColor, height, titleColor }) => {
     const navigation = useNavigation();
+    const { t } = useTranslation();
     return (
         <TouchableOpacity
             style={[styles.cardContainer, { backgroundColor: bgColor, height }]}
@@ -75,20 +77,21 @@ const TopicCard = React.memo(({ title, image, bgColor, height, titleColor }) => 
             <View style={styles.imageContainer}>
                 <Image source={image} style={styles.cardImage} resizeMode="contain" />
             </View>
-            <Text style={[styles.cardTitle, { color: titleColor }]}>{title}</Text>
+            <Text style={[styles.cardTitle, { color: titleColor }]}>{titleKey ? t(titleKey) : title}</Text>
         </TouchableOpacity>
     );
 });
 
 export default function ChooseTopic() {
+    const { t } = useTranslation();
     return (
         <SafeAreaView style={styles.container}>
 
             <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
                 <View style={styles.headerContainer}>
-                    <Text style={styles.headerTitleBold}>What Brings you</Text>
-                    <Text style={styles.headerTitleLight}>to Silent Moon?</Text>
-                    <Text style={styles.headerSubtitle}>choose a topic to focus on:</Text>
+                    <Text style={styles.headerTitleBold}>{t('screens.chooseTopic.headerBold')}</Text>
+                    <Text style={styles.headerTitleLight}>{t('screens.chooseTopic.headerLight')}</Text>
+                    <Text style={styles.headerSubtitle}>{t('screens.chooseTopic.headerSubtitle')}</Text>
                 </View>
 
                 <View style={styles.masonryContainer}>

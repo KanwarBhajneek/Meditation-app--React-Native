@@ -13,15 +13,18 @@ const Button = (props) => {
     )
 }
 
+import { useTranslation } from 'react-i18next';
+
 const FbButton = (props) => {
     const { onPress } = props;
+    const { t } = useTranslation();
     return (
         <Pressable onPress={onPress} style={styles.pressable}>
             <View style={styles.fbBtn}>
                 <View style={styles.icon}>
                     <FbSVG width={24} height={24} />
                 </View>
-                <Text style={styles.fbtext}>CONTINUE WITH FACEBOOK</Text>
+                <Text style={styles.fbtext}>{t('components.button.facebook')}</Text>
             </View>
         </Pressable>
     )
@@ -29,13 +32,14 @@ const FbButton = (props) => {
 
 const GoogleButton = (props) => {
     const { onPress } = props;
+    const { t } = useTranslation();
     return (
         <Pressable onPress={onPress} style={styles.pressable}>
             <View style={styles.googleBtn}>
                 <View style={styles.icon}>
                     <GoogleSVG width={24} height={24} />
                 </View>
-                <Text style={styles.googletext}>CONTINUE WITH GOOGLE</Text>
+                <Text style={styles.googletext}>{t('components.button.google')}</Text>
             </View>
         </Pressable>
     )

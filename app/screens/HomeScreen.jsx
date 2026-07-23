@@ -3,31 +3,31 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import PlaySvg from '../../assets/svgs/play.svg';
 import Logo from "../components/Logo";
 import RecommendedForYou from '../sections/RecommendedForYou';
-
-
+import { useTranslation } from 'react-i18next';
 
 export default function HomeScreen() {
+    const { t } = useTranslation();
     return (
         <SafeAreaView style={styles.screen}>
             <View style={styles.logoContainer}><Logo /></View>
-            <Text style={styles.header}>Good morning,</Text>
-            <Text style={styles.subHeader}>We wish you have a good day</Text>
+            <Text style={styles.header}>{t('screens.home.goodMorning')}</Text>
+            <Text style={styles.subHeader}>{t('screens.home.wishGoodDay')}</Text>
             <View style={styles.topCard}>
                 <View style={styles.topCardLeft}>
                     <Image style={styles.topCardImage} source={require('../../assets/pngs/basics.png')}></Image>
-                    <Text style={styles.leftTitle}>Basics</Text>
-                    <Text style={styles.leftSubTitle}>COURSE</Text>
+                    <Text style={styles.leftTitle}>{t('screens.home.basics')}</Text>
+                    <Text style={styles.leftSubTitle}>{t('screens.home.course')}</Text>
                     <View style={styles.bottomRow}>
-                        <Text style={styles.bottomRowText}>3-10 MIN</Text>
+                        <Text style={styles.bottomRowText}>{t('screens.home.duration')}</Text>
                         <TopCardStartButton color="#fff" textColor="#3f414e" />
                     </View>
                 </View>
                 <View style={styles.topCardRight}>
                     <Image style={styles.topCardImage} source={require('../../assets/pngs/relaxation.png')}></Image>
-                    <Text style={styles.rightTitle}>Relaxation</Text>
-                    <Text style={styles.rightSubTitle}>MUSIC</Text>
+                    <Text style={styles.rightTitle}>{t('screens.home.relaxation')}</Text>
+                    <Text style={styles.rightSubTitle}>{t('screens.home.music')}</Text>
                     <View style={styles.bottomRow}>
-                        <Text style={styles.bottomRowTextRight}>3-10 MIN</Text>
+                        <Text style={styles.bottomRowTextRight}>{t('screens.home.duration')}</Text>
                         <TopCardStartButton color="#3f414e" textColor="#fff" />
                     </View>
                 </View>
@@ -35,11 +35,11 @@ export default function HomeScreen() {
             <View style={styles.middleCard}>
                 <ImageBackground source={require('../../assets/pngs/middleCard.png')} style={styles.imageBackground}>
                     <View>
-                        <Text style={styles.middleCardTitle}>Daily Thought</Text>
+                        <Text style={styles.middleCardTitle}>{t('screens.home.dailyThought')}</Text>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                            <Text style={styles.middleCardSubTitle}>MEDITATION</Text>
+                            <Text style={styles.middleCardSubTitle}>{t('screens.home.meditation')}</Text>
                             <Dot />
-                            <Text style={styles.middleCardSubTitle}>3-10 MIN</Text>
+                            <Text style={styles.middleCardSubTitle}>{t('screens.home.duration')}</Text>
                         </View>
                     </View>
                     <TouchableOpacity>
@@ -54,10 +54,11 @@ export default function HomeScreen() {
 
 const TopCardStartButton = (props) => {
     const { color, textColor } = props;
+    const { t } = useTranslation();
     return (
         <Pressable>
             <View style={[styles.topCardStartButton, { backgroundColor: color }]}>
-                <Text style={[styles.topCardStartButtonText, { color: textColor }]}>START</Text>
+                <Text style={[styles.topCardStartButtonText, { color: textColor }]}>{t('screens.home.start')}</Text>
             </View>
         </Pressable>
     );

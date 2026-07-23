@@ -1,25 +1,25 @@
 import React, { useCallback } from 'react';
 import { FlatList, Image, StyleSheet, Text, View } from 'react-native';
-
-
+import { useTranslation } from 'react-i18next';
 
 const RecommendedForYou = () => {
+    const { t } = useTranslation();
 
     const data = [{
         image: require('../../assets/pngs/focusCard.png'),
-        title: 'Focus',
-        subTitle: 'MEDITATION',
+        title: t('sections.recommended.focus'),
+        subTitle: t('sections.recommended.meditation'),
         backgroundColor: '#AFDBC5'
     },
     {
         image: require('../../assets/pngs/happinessCard.png'),
-        title: 'Happiness',
-        subTitle: 'MEDITATION',
+        title: t('sections.recommended.happiness'),
+        subTitle: t('sections.recommended.meditation'),
     },
     {
         image: require('../../assets/pngs/focusCard.png'),
-        title: 'Focus',
-        subTitle: 'MEDITATION',
+        title: t('sections.recommended.focus'),
+        subTitle: t('sections.recommended.meditation'),
         backgroundColor: '#AFDBC5'
 
     }];
@@ -27,7 +27,7 @@ const RecommendedForYou = () => {
     const renderItem = useCallback(({ item }) => <ListCardMemoized item={item} />, []);
 
     return (<View style={styles.container}>
-        <Text style={styles.header}>Recommended for you</Text>
+        <Text style={styles.header}>{t('sections.recommended.header')}</Text>
         <FlatList
             data={data}
             horizontal={true}
@@ -46,13 +46,14 @@ const Dot = () => <View style={styles.dot} />
 const ListCard = (props) => {
     const { item } = props;
     const { title, subTitle, image, backgroundColor } = item;
+    const { t } = useTranslation();
     return (<View style={styles.listCard}>
         <Image source={image} style={[styles.image, { backgroundColor: backgroundColor }]} />
         <Text style={styles.title}>{title}</Text>
         <View style={styles.row}>
             <Text style={styles.subTitle}>{subTitle}</Text>
             <Dot />
-            <Text style={styles.subTitle}>3-10 MIN</Text>
+            <Text style={styles.subTitle}>{t('sections.recommended.duration')}</Text>
         </View>
     </View>);
 };

@@ -6,29 +6,31 @@ import BackgroundSVG from '../../assets/svgs/intro_background.svg';
 import Curve from '../../assets/svgs/intro_curve.svg';
 import { PrimaryButton } from './../components/Button';
 import Logo from './../components/Logo';
+import { useTranslation } from 'react-i18next';
 
 export default function Intro() {
   const navigation = useNavigation();
+  const { t } = useTranslation();
 
   return (
     <View>
       <TopSection />
       <View style={[styles.container]}>
-        <Text style={styles.title}>We are what we do</Text>
-        <Text style={styles.subtitle}>Thousands of people are using silent moon for regular meditation</Text>
+        <Text style={styles.title}>{t('screens.intro.title')}</Text>
+        <Text style={styles.subtitle}>{t('screens.intro.subtitle')}</Text>
         <View style={styles.btnContainer}>
           <PrimaryButton
-            text="SIGN UP"
+            text={t('screens.intro.signup')}
             onPress={() => navigation.navigate('Signup')}
           />
         </View>
         <Text style={styles.btnSubText}>
-          ALREADY HAVE AN ACCOUNT?{' '}
+          {t('screens.intro.alreadyHaveAccount')}
           <Text
             style={styles.btnSubTextPrimary}
             onPress={() => navigation.navigate('Login')}
           >
-            LOG IN
+            {t('screens.intro.login')}
           </Text>
         </Text>
       </View>
