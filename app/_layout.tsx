@@ -8,6 +8,7 @@ import Intro from './screens/Intro';
 import Login from './screens/Login';
 import Reminders from './screens/Reminders';
 import Signup from './screens/Signup';
+import CourseDetails from './screens/CourseDetails';
 
 const Stack = createStackNavigator();
 
@@ -30,6 +31,7 @@ export default function RootLayout() {
       <Stack.Screen name="ChooseTopic" component={ChooseTopic} />
       <Stack.Screen name="Reminders" component={Reminders} />
       <Stack.Screen name="Dashboard" component={Dashboard} />
+      <Stack.Screen name="CourseDetails" component={CourseDetails} />
     </Stack.Navigator>
   );
 }

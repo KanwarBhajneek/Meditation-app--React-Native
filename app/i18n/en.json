@@ -86,6 +86,20 @@
         "F": "F",
         "S": "S"
       }
+    },
+    "courseDetails": {
+      "title": "Happy Morning",
+      "subtitle": "COURSE",
+      "description": "Ease the mind into a restful night's sleep with these deep, ambient tones.",
+      "favorites": "Favorites",
+      "listening": "Listening",
+      "maleVoice": "Male Voice",
+      "femaleVoice": "Female Voice",
+      "tracks": {
+        "focusAttention": "Focus Attention",
+        "bodyScan": "Body Scan",
+        "makingSpace": "Making Space"
+      }
     }
   }
 }

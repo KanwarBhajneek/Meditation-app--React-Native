@@ -4,16 +4,18 @@ import PlaySvg from '../../assets/svgs/play.svg';
 import Logo from "../components/Logo";
 import RecommendedForYou from '../sections/RecommendedForYou';
 import { useTranslation } from 'react-i18next';
+import { useNavigation } from '@react-navigation/native';
 
 export default function HomeScreen() {
     const { t } = useTranslation();
+    const navigation = useNavigation();
     return (
         <SafeAreaView style={styles.screen}>
             <View style={styles.logoContainer}><Logo /></View>
             <Text style={styles.header}>{t('screens.home.goodMorning')}</Text>
             <Text style={styles.subHeader}>{t('screens.home.wishGoodDay')}</Text>
             <View style={styles.topCard}>
-                <View style={styles.topCardLeft}>
+                <TouchableOpacity style={styles.topCardLeft} onPress={() => navigation.navigate('CourseDetails')}>
                     <Image style={styles.topCardImage} source={require('../../assets/pngs/basics.png')}></Image>
                     <Text style={styles.leftTitle}>{t('screens.home.basics')}</Text>
                     <Text style={styles.leftSubTitle}>{t('screens.home.course')}</Text>
@@ -21,7 +23,7 @@ export default function HomeScreen() {
                         <Text style={styles.bottomRowText}>{t('screens.home.duration')}</Text>
                         <TopCardStartButton color="#fff" textColor="#3f414e" />
                     </View>
-                </View>
+                </TouchableOpacity>
                 <View style={styles.topCardRight}>
                     <Image style={styles.topCardImage} source={require('../../assets/pngs/relaxation.png')}></Image>
                     <Text style={styles.rightTitle}>{t('screens.home.relaxation')}</Text>
