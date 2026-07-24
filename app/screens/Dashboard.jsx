@@ -6,6 +6,7 @@ import MusicIcon from '../../assets/svgs/music.svg';
 import ProfileIcon from '../../assets/svgs/profile.svg';
 import SleepIcon from '../../assets/svgs/sleep.svg';
 import HomeScreen from './HomeScreen';
+import MeditateScreen from './MeditateScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -48,7 +49,7 @@ export default function Dashboard() {
                             <SleepIcon width={22} height={22} color={focused ? '#FFF' : color} />
                         </View>)
                 }} />
-            <Tab.Screen name="Meditate" component={HomeScreen}
+            <Tab.Screen name="Meditate" component={MeditateScreen}
                 options={{
                     tabBarIcon: ({ focused, color }) => (
                         <View style={focused ? styles.iconContainerActive : styles.iconContainer}>

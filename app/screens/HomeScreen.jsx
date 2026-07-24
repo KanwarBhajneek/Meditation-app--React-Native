@@ -1,10 +1,10 @@
+import { useNavigation } from '@react-navigation/native';
+import { useTranslation } from 'react-i18next';
 import { Image, ImageBackground, Pressable, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import PlaySvg from '../../assets/svgs/play.svg';
 import Logo from "../components/Logo";
 import RecommendedForYou from '../sections/RecommendedForYou';
-import { useTranslation } from 'react-i18next';
-import { useNavigation } from '@react-navigation/native';
 
 export default function HomeScreen() {
     const { t } = useTranslation();
@@ -68,10 +68,10 @@ const TopCardStartButton = (props) => {
 
 const Dot = () => <View style={styles.dot} />
 
-const PlayButton = () => <View style={styles.playButton}><PlaySvg /></View>
+const PlayButton = () => <View style={styles.playButton}><PlaySvg color="#3F414E" /></View>
 
 const styles = StyleSheet.create({
-    screen:{
+    screen: {
         backgroundColor: 'white'
     },
     header: {

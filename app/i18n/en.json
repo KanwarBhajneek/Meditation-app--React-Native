@@ -100,6 +100,28 @@
         "bodyScan": "Body Scan",
         "makingSpace": "Making Space"
       }
+    },
+    "meditate": {
+      "title": "Meditate",
+      "description": "we can learn how to recognize when our minds are doing their normal everyday acrobatics.",
+      "filters": {
+        "all": "All",
+        "my": "My",
+        "anxious": "Anxious",
+        "sleep": "Sleep",
+        "kids": "Kids"
+      },
+      "cards": {
+        "dailyCalm": "Daily Calm",
+        "relax": "Relax",
+        "focus": "Focus",
+        "anxious": "Anxious",
+        "dailyCalmSubtitle": "APR 30 • PAUSE PRACTICE",
+        "7daysOfCalm": "7 Days of Calm",
+        "anxietyRelease": "Anxiety Release",
+        "morning": "Morning",
+        "happiness": "Happiness"
+      }
     }
   }
 }
