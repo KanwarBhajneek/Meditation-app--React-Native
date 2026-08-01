@@ -17,6 +17,7 @@ export default function RootLayout() {
     'HelveticaNeue-Light': require('../assets/fonts/HelveticaNeue-Light.otf'),
     'HelveticaNeue-Bold': require('../assets/fonts/HelveticaNeue-Bold.otf'),
     'HelveticaNeue-Medium': require('../assets/fonts/HelveticaNeue-Medium.otf'),
+    'AGaramondPro-Bold': require('../assets/fonts/AGaramondPro-Bold.otf'),
   });
 
   if (!loaded) {

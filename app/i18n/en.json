@@ -122,6 +122,29 @@
         "morning": "Morning",
         "happiness": "Happiness"
       }
+    },
+    "sleep": {
+      "title": "Sleep Stories",
+      "description": "Soothing bedtime stories to help you fall into a deep and natural sleep",
+      "filters": {
+        "all": "All",
+        "my": "My",
+        "anxious": "Anxious",
+        "sleep": "Sleep",
+        "kids": "Kids"
+      },
+      "cards": {
+        "oceanMoon": "The Ocean Moon",
+        "oceanMoonSubtitle": "Non-stop 8- hour mixes of our most popular sleep audio",
+        "nightIsland": "Night Island",
+        "sweetSleep": "Sweet Sleep",
+        "goodNight": "Good Night",
+        "moonClouds": "Moon Clouds",
+        "sweetSleepSubtitle": "45 MIN • SLEEP MUSIC",
+        "nightIslandSubtitle": "45 MIN • SLEEP MUSIC",
+        "goodNightSubtitle": "45 MIN • SLEEP MUSIC",
+        "moonCloudsSubtitle": "45 MIN • SLEEP MUSIC"
+      }
     }
   }
 }
